@@ -9,12 +9,12 @@
     </provider>
     
     <!-- Entities -->
-    <class>com.skilldistillery.nationalfootballleague.entities.NFL</class>
+    <class>com.skilldistillery.nationalfootballleague.entities.Roster</class>
     <!-- End Entitites -->
 
     <properties>
       <property name="javax.persistence.jdbc.url"
-        value="jdbc:mysql://localhost:3306/NFL?useSSL=false" />
+        value="jdbc:mysql://localhost:3306/nfl?useSSL=false" />
       <property name="javax.persistence.jdbc.user"
         value="nfluser"/>
       <property name="javax.persistence.jdbc.password"

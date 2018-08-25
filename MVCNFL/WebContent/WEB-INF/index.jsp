@@ -5,15 +5,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MVC Film Site</title>
+<title>NFL's AFC West Site</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
 
+<h2>AFC West</h2>
+<br>
 <h3>Lookup Player By ID</h3>
 
 <form action="getPlayer.do" method="GET">
-  <input type="text" name="fid"/>
+  <input type="text" name="tid"/>
   <button type="submit" class="btn btn-dark">Find Player</button>
 </form>
 <br>
@@ -35,17 +37,16 @@
   			<th>Age</th>
   			<th>Height</th>
   			<th>Weight</th>
-  			
   		</tr>
   		<c:forEach var="team" items="${teams}">
   		<tr>
-			<td><a href="getPlayer.do?fid=${team.id }">${team.team_name }</a></td>
-			<td>${team.first_name }</td>
-			<td>${team.last_name }</td>
-			<td>${team.player_number }</td>
+			<td><a href="getPlayer.do?tid=${team.id }">${team.teamName }</a></td>
+			<td>${team.firstName }</td>
+			<td>${team.lastName }</td>
+			<td>${team.playerNumber }</td>
 			<td>${team.age }</td>
 			<td>${team.height }</td>
-			<td>${team.weight_lbs }</td>
+			<td>${team.weight }</td>
 			
   		 </tr>
 		</c:forEach>

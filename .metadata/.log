@@ -883,3 +883,12 @@ Binding(COMMAND+SHIFT+T,
 
 !ENTRY org.eclipse.wst.server.discovery 1 0 2018-08-25 13:57:14.591
 !MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-25 14:56:02.181
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-25 15:14:08.414
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-25 15:37:24.037
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
