@@ -14,7 +14,7 @@ public interface NflDAO {
 
 	public Roster addNewPlayer(Roster rost);
 	
-	public Roster updatePlayer(Roster rost);
+	public Roster updatePlayer(Integer id, Roster rost);
 	
 	public boolean deletePlayer(Integer id);
 

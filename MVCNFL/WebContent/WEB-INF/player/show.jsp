@@ -17,6 +17,7 @@
 	  
 	  <table>
 	  	<tr>
+	  		<th>Player ID</th>
 	  		<th>Name</th>
 	  		<th></th>
 	  		<th>Position</th>
@@ -26,6 +27,7 @@
 	  		<th>Weight</th>
 	  	</tr>
 	  	<tr>
+	  		<td>${team.id}</td>
 	  	   	<td>${team.firstName}</td>
 	  	 	<td>${team.lastName }</td>
 	  	 	<td>${team.position }</td>
@@ -45,7 +47,7 @@
 <br>
 	<div>
 	<a href="index.do" class="btn btn-primary btn-dark" role="button" aria-pressed="true">Home</a>
-	<form action="updatePlayer.do" method="POST">
+	<form action="updatePlayer.do" method="GET">
 		<button type="submit" class="btn btn-dark">Update Player</button>
 	</form>
 	<form action="deletePlayer.do" method="POST">

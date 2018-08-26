@@ -5,11 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.mvcnfl.data.NflDAO;
 import com.skilldistillery.nfl.entities.Roster;
@@ -26,9 +25,9 @@ public class NFLController {
 	}
 	
 	@RequestMapping(path="getPlayer.do", method = RequestMethod.GET)
-	public String showPlayerById(Model model, Integer tid) {
-		Roster nfl = dao.show(tid);
-		model.addAttribute("team", nfl);
+	public String showPlayerById(Model model, Integer id) {
+		Roster player = dao.show(id);
+		model.addAttribute("team", player);
 		return "player/show";
 	}
 	
@@ -52,49 +51,44 @@ public class NFLController {
 		mv.setViewName("player/newPlayer");
 		return mv;
 	}
-
+	
+	
+//	@RequestMapping(path = "updatePlayer.do", method = RequestMethod.GET)
+//	public ModelAndView updatePlayerRedirect(Integer id) {
+//		ModelAndView mv = new ModelAndView();
+//		Roster player = dao.show(id);
+//		mv.addObject("player", player);
+//		mv.setViewName("player/updatePlayer");
+//		return mv;
+//	}
+	
+	  
+//	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
+//	public ModelAndView updatePlayer(Roster rost, Integer id) {
+//		ModelAndView mv = new ModelAndView();
+//		dao.updatePlayer(id, rost);
+//		mv.setViewName("player/show");
+//		return mv;
+//	}
 	
 	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
-	public ModelAndView updatePlayer(Roster rost) {
-		ModelAndView mv = new ModelAndView();
-		Roster updatedPlayer = dao.updatePlayer(rost);
-		mv.addObject("player", updatedPlayer);
-		mv.setViewName("player/updatePlayer");
-		return mv;
+	public String updatePlayer(Model model, Integer id, Roster player) { 
+		Roster updatedPlayer = dao.updatePlayer(id, player);
+		model.addAttribute("player", updatedPlayer);
+		return "player/updatePlayer";
 	}
-	
-//	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
-//	public String updatePlayer(Model model, Roster rost) { 
-//		Roster updatedPlayer = dao.updatePlayer(rost);
-//		model.addAttribute("player", updatedPlayer);
-//		return "player/show";
-//	}
 	
 	@RequestMapping(path="deletePlayer.do", method = RequestMethod.POST)
 	public String deletePlayer(Model model, Integer id) {
 		if (dao.deletePlayer(id)) {
-			return "player/show";
+			return "player/deletePlayer";
 		}
 		else {
 			model.addAttribute("player", dao.show(id));
-			return "player/show";
+			return "player/deletePlayer";
 		}
 	}
 
 	
 	
 }
-//if (filmId == 0) {
-//	mv.setViewName("noUpdate");
-//	return mv;
-//} else {
-//	Film film = dao.getFilmbyFilmId(filmId);
-//	boolean updated = dao.updateFilm(film);
-//	if (updated) {
-//		redir.addFlashAttribute("film");
-//		mv.setViewName("film");
-//		return mv;
-//	} else {
-//		mv.setViewName("noUpdate");
-//		return mv;
-//	}

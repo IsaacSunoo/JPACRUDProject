@@ -47,8 +47,8 @@ public class NflDAOImpl implements NflDAO{
 	}
 
 	@Override
-	public Roster updatePlayer(Roster player) {
-		Roster updatedPlayer = em.find(Roster.class, player.getId());
+	public Roster updatePlayer(Integer id, Roster player) {
+		Roster updatedPlayer = em.find(Roster.class, id);
 		updatedPlayer.setTeamName(player.getTeamName());
 		updatedPlayer.setFirstName(player.getFirstName());
 		updatedPlayer.setLastName(player.getLastName());
@@ -57,6 +57,9 @@ public class NflDAOImpl implements NflDAO{
 		updatedPlayer.setAge(player.getAge());
 		updatedPlayer.setHeight(player.getHeight());
 		updatedPlayer.setWeight(player.getWeight());
+		
+		em.flush();
+		
 		return updatedPlayer;
 	}
 

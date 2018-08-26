@@ -15,7 +15,7 @@
 <h3>Lookup Player By ID</h3>
 
 <form action="getPlayer.do" method="GET">
-  <input type="text" name="tid"/>
+  <input type="text" name="id"/>
   <button type="submit" class="btn btn-dark">Find Player</button>
 </form>
 <br>
@@ -25,6 +25,12 @@
 	<button type="submit" class="btn btn-dark">Create Player</button>
 </form>
 <br>
+
+<h3>Edit A Player</h3>
+<form action="updatePlayer.do" method="POST">
+    <input type="text" name="id"/>
+	<button type="submit" class="btn btn-dark">Update Player</button>
+</form>
 
 <h3>All Players in the DB</h3>
 
