@@ -20,6 +20,12 @@
 </form>
 <br>
 
+<h3>Create A New Player</h3>
+<form action="newPlayer.do" method="POST">
+	<button type="submit" class="btn btn-dark">Create Player</button>
+</form>
+<br>
+
 <h3>All Players in the DB</h3>
 
   <form action="teams.do" method="GET">
@@ -33,21 +39,12 @@
   			<th>Team</th>
   			<th>First Name</th>
   			<th>Last Name</th>
-  			<th>Number</th>
-  			<th>Age</th>
-  			<th>Height</th>
-  			<th>Weight</th>
   		</tr>
   		<c:forEach var="team" items="${teams}">
   		<tr>
 			<td><a href="getPlayer.do?tid=${team.id }">${team.teamName }</a></td>
 			<td>${team.firstName }</td>
 			<td>${team.lastName }</td>
-			<td>${team.playerNumber }</td>
-			<td>${team.age }</td>
-			<td>${team.height }</td>
-			<td>${team.weight }</td>
-			
   		 </tr>
 		</c:forEach>
   	

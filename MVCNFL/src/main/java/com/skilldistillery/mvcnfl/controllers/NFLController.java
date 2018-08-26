@@ -49,19 +49,29 @@ public class NFLController {
 		ModelAndView mv = new ModelAndView();
 		Roster newPlayer = dao.addNewPlayer(rost);
 		mv.addObject("player", newPlayer);
-		mv.setViewName("player/show");
+		mv.setViewName("player/newPlayer");
+		return mv;
+	}
+
+	
+	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
+	public ModelAndView updatePlayer(Roster rost) {
+		ModelAndView mv = new ModelAndView();
+		Roster updatedPlayer = dao.updatePlayer(rost);
+		mv.addObject("player", updatedPlayer);
+		mv.setViewName("player/updatePlayer");
 		return mv;
 	}
 	
-	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
-	public String updatePlayer(Model model, Roster rost) { 
-		Roster updatedPlayer = dao.updatePlayer(rost);
-		model.addAttribute("player", updatedPlayer);
-		return "player/show";
-	}
+//	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
+//	public String updatePlayer(Model model, Roster rost) { 
+//		Roster updatedPlayer = dao.updatePlayer(rost);
+//		model.addAttribute("player", updatedPlayer);
+//		return "player/show";
+//	}
 	
 	@RequestMapping(path="deletePlayer.do", method = RequestMethod.POST)
-	public String deletePlayer(Model model, int id) {
+	public String deletePlayer(Model model, Integer id) {
 		if (dao.deletePlayer(id)) {
 			return "player/show";
 		}

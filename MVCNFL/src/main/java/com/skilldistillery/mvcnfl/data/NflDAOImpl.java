@@ -21,7 +21,7 @@ public class NflDAOImpl implements NflDAO{
 	private EntityManager em;
 	
 	@Override
-	public Roster show(int id) {
+	public Roster show(Integer id) {
 		return em.find(Roster.class, id);
 	}
 	
@@ -47,20 +47,21 @@ public class NflDAOImpl implements NflDAO{
 	}
 
 	@Override
-	public Roster updatePlayer(Roster rost) {
-		Roster updatedPlayer = em.find(Roster.class, rost.getId());
-		updatedPlayer.setTeamName(rost.getTeamName());
-		updatedPlayer.setFirstName(rost.getFirstName());
-		updatedPlayer.setLastName(rost.getLastName());
-		updatedPlayer.setPlayerNumber(rost.getPlayerNumber());
-		updatedPlayer.setAge(rost.getAge());
-		updatedPlayer.setHeight(rost.getHeight());
-		updatedPlayer.setWeight(rost.getWeight());
+	public Roster updatePlayer(Roster player) {
+		Roster updatedPlayer = em.find(Roster.class, player.getId());
+		updatedPlayer.setTeamName(player.getTeamName());
+		updatedPlayer.setFirstName(player.getFirstName());
+		updatedPlayer.setLastName(player.getLastName());
+		updatedPlayer.setPosition(player.getPosition());
+		updatedPlayer.setPlayerNumber(player.getPlayerNumber());
+		updatedPlayer.setAge(player.getAge());
+		updatedPlayer.setHeight(player.getHeight());
+		updatedPlayer.setWeight(player.getWeight());
 		return updatedPlayer;
 	}
 
 	@Override
-	public boolean deletePlayer(int id) {
+	public boolean deletePlayer(Integer id) {
 		Roster r =em.find(Roster.class, id);
 		em.remove(r);
 		

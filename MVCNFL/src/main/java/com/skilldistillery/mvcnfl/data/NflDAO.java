@@ -6,7 +6,7 @@ import com.skilldistillery.nfl.entities.Roster;
 
 public interface NflDAO {
 
-	public Roster show(int id);
+	public Roster show(Integer id);
 
 	public List<Roster> index();
 	
@@ -16,7 +16,8 @@ public interface NflDAO {
 	
 	public Roster updatePlayer(Roster rost);
 	
-	public boolean deletePlayer(int id);
+	public boolean deletePlayer(Integer id);
+
 	
 
 }
