@@ -76,7 +76,7 @@ public class NFLController {
 	public ModelAndView updatePlayer(Roster rost, Integer id) {
 		ModelAndView mv = new ModelAndView();
 		dao.updatePlayer(id, rost);
-		mv.setViewName("player/show");
+		mv.setViewName("index");
 		return mv;
 	}
 	

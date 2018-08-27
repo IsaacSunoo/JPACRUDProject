@@ -31,12 +31,12 @@ public class NflDAOImpl implements NflDAO{
 		return em.createQuery(fullQuery, Roster.class).getResultList();
 	}
 
-	@Override
-	public Roster addNewPlayer(Roster player) {
-		em.persist(player);
+	@Override	
+	public Roster addNewPlayer(Roster rost) {
+		em.persist(rost);
 		em.flush();
 		
-		return player;
+		return rost;
 	}
 
 	@Override

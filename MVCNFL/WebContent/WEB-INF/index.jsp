@@ -31,6 +31,7 @@
     <input type="text" name="id"/>
 	<button type="submit" class="btn btn-dark">Update Player</button>
 </form>
+<br> 
 
 <h3>All Players in the DB</h3>
 
