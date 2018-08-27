@@ -11,4 +11,4 @@ This project intended to perform a simple CRUD on a single table database.  Crea
 * CSS (Bootstrap)
 * MySQL
 * JDBC
-* Gradel
+* Gradle
