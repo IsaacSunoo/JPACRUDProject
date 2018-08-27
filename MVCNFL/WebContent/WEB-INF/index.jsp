@@ -27,7 +27,7 @@
 <br>
 
 <h3>Edit A Player</h3>
-<form action="updatePlayer.do" method="POST">
+<form action="updatePlayer.do" method="GET">
     <input type="text" name="id"/>
 	<button type="submit" class="btn btn-dark">Update Player</button>
 </form>

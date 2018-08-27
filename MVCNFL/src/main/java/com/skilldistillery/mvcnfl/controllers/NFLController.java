@@ -53,30 +53,30 @@ public class NFLController {
 	}
 	
 	
-//	@RequestMapping(path = "updatePlayer.do", method = RequestMethod.GET)
-//	public ModelAndView updatePlayerRedirect(Integer id) {
-//		ModelAndView mv = new ModelAndView();
-//		Roster player = dao.show(id);
-//		mv.addObject("player", player);
-//		mv.setViewName("player/updatePlayer");
-//		return mv;
-//	}
+	@RequestMapping(path = "updatePlayer.do", method = RequestMethod.GET)
+	public ModelAndView updatePlayerRedirect(Integer id) {
+		ModelAndView mv = new ModelAndView();
+		Roster player = dao.show(id);
+		mv.addObject("player", player);
+		mv.setViewName("player/updatePlayer");
+		return mv;
+	}
 	
 	  
-//	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
-//	public ModelAndView updatePlayer(Roster rost, Integer id) {
-//		ModelAndView mv = new ModelAndView();
-//		dao.updatePlayer(id, rost);
-//		mv.setViewName("player/show");
-//		return mv;
-//	}
-	
 	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
-	public String updatePlayer(Model model, Integer id, Roster player) { 
-		Roster updatedPlayer = dao.updatePlayer(id, player);
-		model.addAttribute("player", updatedPlayer);
-		return "player/updatePlayer";
+	public ModelAndView updatePlayer(Roster rost, Integer id) {
+		ModelAndView mv = new ModelAndView();
+		dao.updatePlayer(id, rost);
+		mv.setViewName("player/show");
+		return mv;
 	}
+	
+//	@RequestMapping(path="updatePlayer.do", method = RequestMethod.POST)
+//	public String updatePlayer(Model model, Integer id, Roster player) { 
+//		Roster updatedPlayer = dao.updatePlayer(id, player);
+//		model.addAttribute("player", updatedPlayer);
+//		return "player/updatePlayer";
+//	}
 	
 	@RequestMapping(path="deletePlayer.do", method = RequestMethod.POST)
 	public String deletePlayer(Model model, Integer id) {
