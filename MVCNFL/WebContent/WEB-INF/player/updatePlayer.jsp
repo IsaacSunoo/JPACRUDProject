@@ -14,31 +14,31 @@
   <br>
     <form action="updatePlayer.do" method="POST">
     	<label for="id">ID: </label>
-    	<input type="text" name="id">
+    	<input type="text" name="id" value="${players.id}">
 		<br>
 		<label for ="teamName">Team: </label>
-		<input type="text" name="teamName">
+		<input type="text" name="teamName" value="${players.teamName}">
 		<br>
 		<label for ="firstName">First Name: </label>
-		<input type="text" name="firstName">
+		<input type="text" name="firstName" value="${players.firstName}">
 		<br>
 		<label for ="lastName">Last Name: </label>
-		<input type="text" name="lastName">
+		<input type="text" name="lastName" value="${players.lastName}">
 		<br>
 		<label for ="position">Position: </label>
-		<input type="text" name="position">
+		<input type="text" name="position" value="${players.position}">
 		<br>
 		<label for ="number">Number: </label>
-		<input type="text" name="number">
+		<input type="text" name="number" value="${players.playerNumber}">
 		<br>
 		<label for ="age">Age: </label>
-		<input type="text" name="age">
+		<input type="text" name="age" value="${players.age}">
 		<br>
 		<label for ="height">Height: </label>
-		<input type="text" name="height">
+		<input type="text" name="height" value="${players.height}">
 		<br>
 		<label for ="weight">Weight: </label>
-		<input type="text" name="weight">
+		<input type="text" name="weight" value="${players.weight}">
 		<br>
 		<input type="submit" value="Update Player">
 	</form>

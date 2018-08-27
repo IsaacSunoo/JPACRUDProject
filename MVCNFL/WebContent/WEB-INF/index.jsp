@@ -48,7 +48,7 @@
   		</tr>
   		<c:forEach var="team" items="${teams}">
   		<tr>
-			<td><a href="getPlayer.do?tid=${team.id }">${team.teamName }</a></td>
+			<td><a href="getPlayer.do?id=${team.id }">${team.teamName }</a></td>
 			<td>${team.firstName }</td>
 			<td>${team.lastName }</td>
   		 </tr>

@@ -88,7 +88,4 @@ public class NFLController {
 			return "player/deletePlayer";
 		}
 	}
-
-	
-	
 }
