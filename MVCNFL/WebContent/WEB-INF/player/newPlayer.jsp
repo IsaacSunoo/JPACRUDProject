@@ -37,7 +37,7 @@
 	<label for ="weight">Weight: </label>
 	<input type="text" name="weight" value="in lbs" required>
 	<br>
-	<input type="submit" value="Add Player">
+	<button type="submit" class="btn btn-dark">Add Player</button>
 </form>
 <br>	
 <a href="index.do" class="btn btn-primary btn-dark" role="button" aria-pressed="true">Home</a>

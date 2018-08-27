@@ -49,7 +49,11 @@
 		<tr>
 			<td><a href="index.do" class="btn btn-primary btn-dark" role="button" aria-pressed="true">Home</a></td>
 			<td><a href="updatePlayer.do?id=${team.id}" class="btn btn-primary btn-dark" role="button" aria-pressed="true">Update Player</a></td>
-			<td><a href="deletePlayer.do?id=${team.id}" class="btn btn-primary btn-dark" role="button" aria-pressed="true">Delete Player</a></td>
+			<td><form action="deletePlayer.do" method="POST">
+				<label for="id"></label>
+				<input type="hidden" value="${team.id}" name="id"/>
+				<button type="submit" class="btn btn-dark">Delete Player</button>
+			</form></td>
 	</table>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

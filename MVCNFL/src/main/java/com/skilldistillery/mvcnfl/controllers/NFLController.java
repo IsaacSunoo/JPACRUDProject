@@ -52,6 +52,15 @@ public class NFLController {
 		return mv;
 	}
 	
+//	@RequestMapping(path = "newPlayer.do", method = RequestMethod.GET)
+//	public ModelAndView addNewPlayerRedirect(Integer id) {
+//		ModelAndView mv = new ModelAndView();
+//		Roster newPlayer = dao.show(id);
+//		mv.addObject("player", newPlayer);
+//		mv.setViewName("player/show");
+//		return mv;
+//	}
+	
 	
 	@RequestMapping(path = "updatePlayer.do", method = RequestMethod.GET)
 	public ModelAndView updatePlayerRedirect(Integer id) {
